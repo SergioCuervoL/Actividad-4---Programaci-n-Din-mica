@@ -11,8 +11,12 @@ namespace Actividad_4_Programación_Dinamica
 
         public int getVarilla()
         {
-            Console.WriteLine("Ingrese el tamaño de la Varilla: ");
-            int num = Convert.ToInt32(Console.ReadLine());
+            int num = 0;
+            while (num < 0 || num > 11)
+            {
+                Console.WriteLine("Ingrese el tamaño de la Varilla: ");
+                num = Convert.ToInt32(Console.ReadLine());
+            }
             return num;
         }
 
