@@ -22,10 +22,20 @@ namespace Actividad_4_Programación_Dinamica
         public void ejecutar()
         {
             this.n = getVarilla();
-            this.res = buscarMejorBeneficio();
+            int[] lb = buscarBeneficios(this.n);
+            this.res = buscarMejorBeneficio(lb);
             Console.WriteLine(this.res);
         }
-
+        public int [] buscarBeneficios (int tv)
+        {
+            int [] listaBeneficios = new int [10];
+            for (int i = 0; i < 10; i++)
+            {
+                int r = (int) Math.Floor(Convert.ToDouble (tv/ varilla[0, i]));
+                listaBeneficios[i] = r * varilla[1, i];
+            }
+            return listaBeneficios;
+        }
         public int buscarMejorBeneficio(int[] listaBenificios)
         {
             int bmb = listaBenificios[0];
