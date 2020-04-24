@@ -8,22 +8,31 @@ namespace Actividad_4_Programación_Dinamica
                           {1,5,8,9,10,17,17,20,24,30 }};
 
         public int n = 0;
+        public int res = 0;
+        
 
         public int getVarilla()
         {
             int num = 0;
-            do
-            {
-                Console.WriteLine("Ingrese el tamaño de la Varilla: ");
-                num = Convert.ToInt32(Console.ReadLine());
-            } while (num < 0 || num > 10 );
+            Console.WriteLine("Ingrese el tamaño de la Varilla: ");
+            num = Convert.ToInt32(Console.ReadLine());
             return num;
         }
 
         public void ejecutar()
         {
             this.n = getVarilla();
-            Console.WriteLine(this.n);
+            this.res = buscarMejorBeneficio();
+            Console.WriteLine(this.res);
+        }
+
+        public int buscarMejorBeneficio(int[] listaBenificios)
+        {
+            int bmb = listaBenificios[0];
+            for (int i = 1; i < listaBenificios.Length; i++)
+                if (bmb < listaBenificios[i])
+                    bmb = listaBenificios[i];
+            return bmb;
         }
 
         static void Main(string[] args)
