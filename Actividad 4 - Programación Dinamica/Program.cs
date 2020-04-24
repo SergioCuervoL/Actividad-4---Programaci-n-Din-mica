@@ -22,7 +22,7 @@ namespace Actividad_4_Programación_Dinamica
         public void ejecutar()
         {
             this.n = getVarilla();
-            this.res = buscarMejorBeneficio();
+            //this.res = buscarMejorBeneficio();
             Console.WriteLine(this.res);
         }
 
